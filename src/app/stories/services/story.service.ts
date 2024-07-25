@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Story } from '../types/story';
-import { collection, collectionData, Firestore } from '@angular/fire/firestore';
+import { doc, docData, Firestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root',
@@ -9,9 +9,9 @@ import { collection, collectionData, Firestore } from '@angular/fire/firestore';
 export class StoryService {
   constructor(private firestore: Firestore) {}
 
-  public getStory(storyID: string): Observable<Story[]> {
-    const collectionRef = collection(this.firestore, 'stories');
+  public getStory(storyID: string): Observable<Story> {
+    const docRef = doc(this.firestore, storyID, 'stories');
 
-    return collectionData(collectionRef, {}) as Observable<Story[]>;
+    return docData(docRef, {}) as Observable<Story>;
   }
 }

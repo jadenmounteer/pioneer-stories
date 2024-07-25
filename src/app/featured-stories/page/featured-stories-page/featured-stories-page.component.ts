@@ -3,6 +3,7 @@ import { StoryPreview } from '../../types/story-preview';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FeaturedStoriesService } from '../../services/featured-stories.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-featured-stories-page',
@@ -16,7 +17,13 @@ export class FeaturedStoriesPageComponent {
     FeaturedStoriesService
   );
 
+  private router: Router = inject(Router);
+
   protected featuredStories: Signal<StoryPreview[] | undefined> = toSignal(
     this.featuredStoriesService.getStoryPreviews()
   );
+
+  protected viewStory(storyPreview: StoryPreview) {
+    this.router.navigate(['story-view', storyPreview.storyId]);
+  }
 }

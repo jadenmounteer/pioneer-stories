@@ -1,5 +1,5 @@
 export interface StoryPreview {
   title: string;
   description: string;
-  storyPath: string;
+  storyId: string;
 }

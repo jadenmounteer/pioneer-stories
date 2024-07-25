@@ -1,1 +1,8 @@
-<p>featured-stories-page works!</p>
+<h1>Featured Stories</h1>
+
+@if(featuredStories()) {
+<div class="story-preview" *ngFor="let story of featuredStories()">
+  <h2>{{ story.title }}</h2>
+  <p>{{ story.description }}</p>
+</div>
+}

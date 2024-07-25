@@ -12,14 +12,13 @@ import { Observable, of, take } from 'rxjs';
   styleUrl: './story-view.component.scss',
 })
 export class StoryViewComponent {
-  // ID is: tFc2ePZtmLIdy0T5gUz5
+  private storyService: StoryService = inject(StoryService);
+
   protected story$: Observable<Story> = new Observable<Story>();
 
   @Input() set storyId(value: string) {
     this.story$ = this.storyService.getStory(value);
   }
-
-  storyService: StoryService = inject(StoryService);
 
   constructor() {}
 

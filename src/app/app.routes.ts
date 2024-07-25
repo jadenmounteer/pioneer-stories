@@ -11,4 +11,9 @@ export const routes: Routes = [
     path: 'story-view/:storyId',
     component: StoryViewComponent,
   },
+  // This is the wildcard route. It must always be last.
+  {
+    path: '**',
+    component: FeaturedStoriesPageComponent,
+  },
 ];

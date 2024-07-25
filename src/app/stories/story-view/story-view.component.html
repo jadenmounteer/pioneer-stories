@@ -1,7 +1,8 @@
-@if(story()) {
-<h1>{{ story()?.title }}</h1>
+@if(story$ | async; as story) {
+<h1>{{ story.title }}</h1>
 
-<div class="paragraph-wrapper" *ngFor="let paragraph of story()?.paragraphs">
+<div class="paragraph-wrapper" *ngFor="let paragraph of story.paragraphs">
   <p>{{ paragraph }}</p>
 </div>
+
 }

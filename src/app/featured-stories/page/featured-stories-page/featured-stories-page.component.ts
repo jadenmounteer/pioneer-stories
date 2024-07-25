@@ -23,7 +23,7 @@ export class FeaturedStoriesPageComponent {
     this.featuredStoriesService.getStoryPreviews()
   );
 
-  protected viewStory(storyPreview: StoryPreview) {
+  protected viewStory(storyPreview: StoryPreview): void {
     this.router.navigate(['story-view', storyPreview.storyId]);
   }
 }

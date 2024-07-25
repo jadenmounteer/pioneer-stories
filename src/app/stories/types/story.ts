@@ -1,4 +1,4 @@
 export interface Story {
   title: string;
-  description: string;
+  paragraphs: string[];
 }

@@ -13,5 +13,9 @@ export class StoryViewComponent {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.storyService.getStory('tFc2ePZtmLIdy0T5gUz5').subscribe((data) => {
+      console.log(data);
+    });
+  }
 }

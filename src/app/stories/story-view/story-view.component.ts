@@ -3,11 +3,12 @@ import { StoryService } from '../services/story.service';
 import { Story } from '../types/story';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
+import { AudioPlayerComponent } from '../audio-player/audio-player/audio-player.component';
 
 @Component({
   selector: 'app-story-view',
   standalone: true,
-  imports: [CommonModule, AsyncPipe],
+  imports: [CommonModule, AsyncPipe, AudioPlayerComponent],
   templateUrl: './story-view.component.html',
   styleUrl: './story-view.component.scss',
 })

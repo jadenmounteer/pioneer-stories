@@ -5,7 +5,7 @@
 <div *ngFor="let storyPreview of featuredStories()" class="previews-wrapper">
   <app-featured-story
     [storyPreview]="storyPreview"
-    (click)="viewStory(storyPreview)"
+    (viewStory)="viewStory(storyPreview)"
   ></app-featured-story>
 </div>
 }

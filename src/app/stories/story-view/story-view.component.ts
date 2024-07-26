@@ -2,7 +2,7 @@ import { Component, inject, Input } from '@angular/core';
 import { StoryService } from '../services/story.service';
 import { Story } from '../types/story';
 import { AsyncPipe, CommonModule } from '@angular/common';
-import { Observable, of, take } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-story-view',

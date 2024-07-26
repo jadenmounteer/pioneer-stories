@@ -1,4 +1,8 @@
 <div class="story-preview">
   <h2>{{ storyPreview().title }}</h2>
   <p>{{ storyPreview().description }}</p>
+
+  @if(imageUrl() | async; as imageUrl) {
+  <img [src]="imageUrl" alt="story image" />
+  }
 </div>

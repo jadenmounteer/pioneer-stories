@@ -25,10 +25,8 @@ export class FeaturedStoryComponent {
   @Output() viewStory: EventEmitter<any> = new EventEmitter();
 
   protected imageUrl = computed(async () => {
-    console.log('In computed');
     const url = await this.fileService.getFileUrl(this.storyPreview().imageUrl);
-    console.log('Got url!');
-    console.log(url);
+
     return url;
   });
 }

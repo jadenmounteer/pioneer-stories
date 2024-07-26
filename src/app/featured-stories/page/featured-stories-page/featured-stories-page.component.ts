@@ -4,11 +4,12 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { FeaturedStoriesService } from '../../services/featured-stories.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { FeaturedStoryComponent } from '../../featured-story/featured-story/featured-story.component';
 
 @Component({
   selector: 'app-featured-stories-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FeaturedStoryComponent],
   templateUrl: './featured-stories-page.component.html',
   styleUrl: './featured-stories-page.component.scss',
 })

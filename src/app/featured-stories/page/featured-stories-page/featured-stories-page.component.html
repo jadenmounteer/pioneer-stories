@@ -2,12 +2,10 @@
 <h2>Featured Stories</h2>
 
 @if(featuredStories()) {
-<div
-  class="story-preview"
-  *ngFor="let storyPreview of featuredStories()"
-  (click)="viewStory(storyPreview)"
->
-  <h2>{{ storyPreview.title }}</h2>
-  <p>{{ storyPreview.description }}</p>
+<div *ngFor="let storyPreview of featuredStories()" class="previews-wrapper">
+  <app-featured-story
+    [storyPreview]="storyPreview"
+    (click)="viewStory(storyPreview)"
+  ></app-featured-story>
 </div>
 }
